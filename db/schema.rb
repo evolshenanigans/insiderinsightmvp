@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_04_02_162107) do
+ActiveRecord::Schema[7.0].define(version: 2024_04_02_210957) do
   create_table "officials", force: :cascade do |t|
     t.string "name"
     t.string "party_affiliation"
     t.string "state"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image_url"
   end
 
   create_table "stocks", force: :cascade do |t|
@@ -28,7 +29,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_02_162107) do
   create_table "trades", force: :cascade do |t|
     t.integer "official_id", null: false
     t.integer "stock_id", null: false
-    t.integer "user_id", null: false
+    t.integer "user_id"
     t.string "transaction_type"
     t.integer "transaction_count"
     t.string "security_type"
