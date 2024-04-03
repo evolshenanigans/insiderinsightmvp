@@ -10,18 +10,10 @@ services:
         fromDatabase:
           name: insider-insight-db
           property: connectionString
-    # Additional configuration for your web service...
+      - key: RAILS_MASTER_KEY
+        sync: false
 
 databases:
   - name: insider-insight-db
     plan: starter
     user: insider-insight-db
-
-
-    envVars:
-      - key: DATABASE_URL
-        fromDatabase:
-          name: insider-insight-db
-          property: connectionString
-      - key: RAILS_MASTER_KEY
-        sync: false
