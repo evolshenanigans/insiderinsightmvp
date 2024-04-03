@@ -3,8 +3,8 @@ services:
     name: InsiderInsight
     env: ruby
     plan: free
-    buildCommand: "./bin/render-build.sh"
-    startCommand: "./bin/render-start.sh"
+    buildCommand: "bundle install && rails assets:precompile"
+    startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
