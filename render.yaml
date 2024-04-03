@@ -14,5 +14,4 @@ services:
 databases:
   - name: insider-insight-db
     plan: starter
-    engine: postgres
-    version: "12" # Specify the version you need; check Render's documentation for supported versions.
+
