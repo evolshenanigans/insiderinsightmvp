@@ -5,17 +5,18 @@
   
   <div class="flex flex-col justify-between bg-car bg-no-repeat bg-fixed bg-cover bg-right md:bg-center ">
         <div class="mt-44 py-4 text-center text-6xl font-bold text-black">
-        <span class="font-extralight">Welcome</span><br />
-        <span class="font-extralight">to</span><br />
-        <span class=" font-anybody">Insider Insight</span>
+        <span class="font-anybody">Unlock</span><br />
+        <span class="font-anybody">Investment Success</span><br />
+        <span class=" font-extralight">Follow Your Leaders</span>
         </div>
   </div>
 </section>
 
 <section class=" w-5/6 m-auto mt-28 grid grid-col-1 gap-x-3 gap-y-10 md:grid-cols-2 max-w-6xl items-center">
   <div class="py-3 px-2">
-   <h1 class="text-5xl mb-8">New interior</h1>
-   <p1 class="text-md">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse in turpis at libero euismod luctus vel sit amet lorem.<br/>  Maecenas lorem metus, semper in lobortis imperdiet, pulvinar sed felis. Maecenas aliquam velit in ligula tincidunt imperdiet. Integer interdum enim ut placerat dignissim. Maecenas turpis orci, facilisis vitae ligula non, luctus convallis risus. </p1>
+   <h1 class="text-5xl mb-8">Why Politicians Portfolios'</h1>
+   <h2 class="text-2xl font-semibold mb-4">Insight into Influential Decisions</h2>
+      <p class="text-gray-700">Politicians often have access to privileged information and insights into forthcoming legislative changes that could significantly impact various market sectors. By observing how politicians invest, you can glean insights into where they believe the market is heading.</p>
   </div>
     <div class="py-3 px-2">
     <img src="https://blenderartists.org/uploads/default/optimized/4X/3/5/4/3541170449c49b84c8b43487662e086f9b9f8fa0_2_690x286.png">
@@ -31,8 +32,8 @@
   </div>
 
   <div class="py-3 px-2 ">
-   <h1 class="text-5xl mb-8">New interior</h1>
-   <p1 class="text-md">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse in turpis at libero euismod luctus vel sit amet lorem.<br/>  Maecenas lorem metus, semper in lobortis imperdiet, pulvinar sed felis. Maecenas aliquam velit in ligula tincidunt imperdiet. Integer interdum enim ut placerat dignissim. Maecenas turpis orci, facilisis vitae ligula non, luctus convallis risus. </p1>
+   <h2 class="text-2xl font-semibold mb-4">Outperform the Market</h2>
+    <p class="text-gray-700">Studies have shown that portfolios mimicking those of certain politicians can outperform the market average. This is attributed to their insider knowledge and the strategic moves made based on upcoming policy changes.</p>
   </div>
 </section>
 
@@ -40,52 +41,42 @@
 <section class="w-full bg-lights md:py-52 py-28 md:bg-cover md:bg-center bg-contain my-20 border bg-fixed bg-no-repeat"></section>
 
 
-<section class="w-5/6 m-auto mt-10 grid grid-cols-1 gap-x-3 gap-y-10 md:grid-cols-2 max-w-6xl items-center mb-20">
-  <div class="py-3 px-2">
-    <h1 class="text-5xl mb-8">Interested?</h1>
-    <p class="text-md">click below</p>
+<section class="flex flex-col items-center justify-center w-full mt-10 mb-20">
+  <div class="w-5/6 max-w-6xl px-2 py-3">
+    <h1 class="text-5xl mb-8 text-center">Interested?</h1>
+    <p class="text-md text-center mb-4">click below</p>
 
-<div class="overflow-x-auto">
-  <table class="table w-full">
-    <!-- head -->
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Party Affiliation</th>
-        <th></th> <!-- Keeping this column for potential future use or to maintain structure -->
-      </tr>
-    </thead>
-    <tbody>
-      <% @officials.each do |official| %>
-        <tr>
-          <td>
-            <div class="flex items-center gap-3">
-              <div class="avatar">
-                <div class="mask mask-squircle w-12 h-12">
-                  <%= image_tag(official.image_url, alt: "#{official.name} Avatar", class: "w-full h-full") if official.image_url.present? %>
-                </div>
-              </div>
-              <div>
-                <div class="font-bold"><%= official.name %></div>
-              </div>
-            </div>
-          </td>
-          <td>
-            <%= official.party_affiliation %>
-          </td>
-          <td>
-            <%= link_to 'Details', official_path(official), class: "btn btn-ghost btn-xs" %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
-
-
-
+    <div class="flex flex-col items-center">
+      <div class="overflow-x-auto w-full">
+        <table class="w-full mx-auto text-center">
+          <!-- head -->
+          <thead>
+            <tr>
+              <th class="px-4 py-2">Name</th>
+              <th class="px-4 py-2">Party Affiliation</th>
+              <th class="px-4 py-2"></th> <!-- Empty for alignment or future use -->
+            </tr>
+          </thead>
+          <tbody>
+            <% @officials.each do |official| %>
+              <tr>
+                <td class="px-4 py-2">
+                  <div class="flex justify-center items-center gap-3">
+                    <div class="avatar">
+                      <div class="mask mask-squircle w-12 h-12">
+                        <%= image_tag(official.image_url, alt: "#{official.name} Avatar", class: "w-full h-full") if official.image_url.present? %>
+                      </div>
+                    </div>
+                    <div><%= official.name %></div>
+                  </div>
+                </td>
+                <td class="px-4 py-2"><%= official.party_affiliation %></td>
+                <td class="px-4 py-2"><%= link_to 'Details', official_path(official), class: "btn btn-ghost btn-xs" %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
-
 </section>
-
-
